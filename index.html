@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css'
+          rel='stylesheet' />
+    <link rel="stylesheet"
+          href="index.css">
+
+</head>
+<style>
+    #mapid {
+        height: 512px;
+        width: 512px;
+    }
+</style>
+
+<body>
+    <section>
+        <section>
+            <label for="address">Address</label>
+            <textarea id="address"
+                      name="address"
+                      autocomplete="address"
+                      maxlength="300"
+                      required></textarea>
+        </section>
+
+        <section>
+            <label for="postal-code">ZIP or postal code (optional)</label>
+            <input id="postal-code"
+                   name="postal-code"
+                   autocomplete="postal-code"
+                   maxlength="20" />
+        </section>
+
+        <section id="country-region">
+            <label for="">Country or region</label>
+            <select id="country"
+                    name="country"
+                    autocomplete="country"
+                    required>
+                <option disabled
+                        selected
+                        value="SPACER"> </option>
+                <option value="ES">Spain</option>
+            </select>
+        </section>
+        <input id="buscar"
+               type="button"
+               value="Buscar" />
+    </section>
+    <section>
+        <div id="map"
+             style="width: 780px; height: 400px;">
+        </div>
+    </section>
+
+    <script src="index.js"
+            type="module">
+
+            </script>
+</body>
+
+</html>
