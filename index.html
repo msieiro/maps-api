@@ -6,21 +6,57 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css'
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css'
           rel='stylesheet' />
     <link rel="stylesheet"
           href="index.css">
 
 </head>
 <style>
-    #mapid {
+    #map {
         height: 512px;
         width: 512px;
     }
 </style>
+<style>
+    pre.ui-output {
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 11px;
+        line-height: 18px;
+        border-radius: 3px;
+        max-height: 70%;
+        max-width: 100%;
+        overflow: auto;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+
+    pre.ui-output:empty {
+        padding: 0;
+    }
+</style>
 
 <body>
+    <section>
+        <label for="street">Street</label>
+        <input id="street"
+               type="text"
+               name="street"
+               autocomplete="address"
+               maxlength="300"
+               required />
+        <section>
+            <pre id="output"
+                 class="ui-output"></pre>
+        </section>
+    </section>
     <section>
         <section>
             <label for="address">Address</label>
@@ -57,14 +93,11 @@
     </section>
     <section>
         <div id="map"
-             style="width: 780px; height: 400px;">
-        </div>
+             style="height: 500px; width: 500px;"></div>
     </section>
 
     <script src="index.js"
-            type="module">
-
-            </script>
+            type="module"></script>
 </body>
 
 </html>
